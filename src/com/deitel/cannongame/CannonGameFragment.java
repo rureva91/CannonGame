@@ -1,5 +1,5 @@
-// CannonGameFragment.java
-// CannonGameFragment creates and manages a CannonView
+
+
 package com.deitel.cannongame;
 
 import android.app.Fragment;
@@ -22,36 +22,36 @@ public class CannonGameFragment extends Fragment
       View view = 
          inflater.inflate(R.layout.fragment_game, container, false);
 
-      // get the CannonView
+      
       cannonView = (CannonView) view.findViewById(R.id.cannonView);
       return view;
    }
 
-   // set up volume control once Activity is created
+ 
    @Override
    public void onActivityCreated(Bundle savedInstanceState)
    {
       super.onActivityCreated(savedInstanceState);
 
-      // allow volume keys to set game volume
+     
       getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
    }
 
-   // when MainActivity is paused, CannonGameFragment terminates the game
+   
    @Override
    public void onPause()
    {
       super.onPause(); 
-      cannonView.stopGame(); // terminates the game
+      cannonView.stopGame(); 
    } 
    
-   // when MainActivity is paused, CannonGameFragment releases resources
+   
    @Override
    public void onDestroy()
    {
       super.onDestroy();
       cannonView.releaseResources();
    }
-} // end class CannonGameFragment
+} 
 
 
